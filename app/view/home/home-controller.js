@@ -2,33 +2,8 @@
 
 require('./_home.scss');
 
-module.exports = ['$log', '$rootScope', 'galleryService', HomeController];
+module.exports = ['$log', HomeController];
 
-function HomeController($log, $rootScope, galleryService) {
+function HomeController($log) {
   $log.debug('HomeController()');
-
-  this.title = 'Welcome home from homeCtrl';
-
-  this.fetchGalleries = function() {
-    $log.debug('homeCtrl.fetchGalleries');
-    galleryService.fetchGalleries()
-    .then( galleries => {
-      this.galleries = galleries;
-    });
-  };
-
-  this.fetchGalleries();
-  this.gallery = {};
-
-  $rootScope.$on('$locationChangeSuccess', () => {
-    this.fetchGalleries();
-  });
-
-  this.deleteGallery = function(gallery) {
-    galleryService.deleteGallery(gallery)
-    .then( () => {
-      this.fetchGalleries();
-    });
-  };
-
 }

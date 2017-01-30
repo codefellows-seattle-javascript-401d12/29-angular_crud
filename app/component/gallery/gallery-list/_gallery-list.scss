@@ -1,0 +1,25 @@
+@import "../../../scss/lib/theme/vars";
+
+.gallery-list {
+  li {
+    background: $brand-secondary;
+    color: $brand-primary;
+    margin-bottom: $gutter-sm;
+    border-radius: 7px;
+    padding-top: $gutter-sm;
+    padding-left: $gutter-sm;
+
+    button {
+      margin-right: 2%;
+      float: right;
+    }
+
+    div {
+      padding-bottom: $gutter-sm;
+    }
+    .key {
+      font-weight: bold;
+      margin-right: $gutter-sm;
+    }
+  }
+}
