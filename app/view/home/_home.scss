@@ -1,0 +1,25 @@
+@import "../scss/lib/theme/vars";
+
+.home{
+ .gallery{
+   margin-left: $box-std / 4;
+   color: $brand-primary;
+   font-size: $padding-std * 3;
+ }
+ ul{
+
+  li{
+   background-color: $brand-primary * 1.5;
+   color: $color-l;
+   width: $box-std * 2;
+   margin: $gutter-std * 2;
+   margin-top: $gutter-std / 2;
+   font-size: $padding-std * 2;
+   border-radius: $padding-std;
+  }
+  span{
+   display: block;
+   padding: $gutter-std / 2;
+  }
+ }
+}
