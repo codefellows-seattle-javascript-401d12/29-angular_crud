@@ -7,6 +7,7 @@
       <div><span class="key">name:</span>{{ gallery.name }}</div>
       <div><span class="key">description:</span>{{ gallery.desc }}</div>
       <div><span class="key">id:</span>{{ gallery._id }}</div>
+      <button ng-click="homeCtrl.deleteGallery(gallery)">delete</button>
     </li>
   </ul>
 </section>

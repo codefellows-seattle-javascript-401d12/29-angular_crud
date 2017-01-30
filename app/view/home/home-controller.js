@@ -13,7 +13,6 @@ function HomeController($log, $rootScope, galleryService) {
     $log.debug('homeCtrl.fetchGalleries');
     galleryService.fetchGalleries()
     .then( galleries => {
-      $log.log('fetched galleries');
       this.galleries = galleries;
     });
   };
@@ -23,4 +22,11 @@ function HomeController($log, $rootScope, galleryService) {
   $rootScope.$on('$locationChangeSuccess', () => {
     this.fetchGalleries();
   });
+
+  this.deleteGallery = function(gallery) {
+    galleryService.deleteGallery(gallery)
+    .then( () => {
+      this.fetchGalleries();
+    });
+  };
 }
