@@ -9,8 +9,8 @@
   </span>
   <button
     ng-click="editableFieldCtrl.handleModeChange()">
-    {{ editableFieldCtrl.editMode ? 'Save' : 'Edit' }}
+    {{ editableFieldCtrl.editMode ? 'save' : 'edit' }}
   </button>
   <button ng-if="editableFieldCtrl.editMode"
-    ng-click="editableFieldCtrl.reset()">Reset</button>
+    ng-click="editableFieldCtrl.cancel()">cancel</button>
 </span>

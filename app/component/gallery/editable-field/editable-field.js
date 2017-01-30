@@ -27,8 +27,9 @@ function EditableFieldController($log) {
     this.editMode = !this.editMode;
   };
 
-  this.reset = function() {
-    $log.debug('EditableFieldController.reset()');
+  this.cancel = function() {
+    $log.debug('EditableFieldController.cancel()');
+    this.editMode = false;
     this.fieldValue = this.fieldValueCopy;
   };
 
