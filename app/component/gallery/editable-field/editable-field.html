@@ -1,0 +1,16 @@
+<span class="editable-field">
+  <span ng-switch="editableFieldCtrl.editMode">
+    <input ng-switch-when="true"
+      type="{{ editableFieldCtrl.fieldType }}"
+      ng-model="editableFieldCtrl.fieldValue">
+    <span ng-switch-default>
+      {{ editableFieldCtrl.fieldValue }}
+    </span>
+  </span>
+  <button
+    ng-click="editableFieldCtrl.handleModeChange()">
+    {{ editableFieldCtrl.editMode ? 'save' : 'edit' }}
+  </button>
+  <button ng-if="editableFieldCtrl.editMode"
+    ng-click="editableFieldCtrl.cancel()">cancel</button>
+</span>
