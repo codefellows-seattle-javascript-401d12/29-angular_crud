@@ -25,6 +25,17 @@ function GalleryListController($log, $rootScope, galleryService) {
     this.fetchGalleries();
   });
 
+  this.updateGallery = function(gallery, prop, value) {
+    $log.debug('galleryListCtrl.updateGallery()');
+    $log.debug('gallery:',gallery);
+    $log.debug('setting',prop,'->',value);
+    gallery[prop] = value;
+    galleryService.updateGallery(gallery)
+    .then( () => {
+      //Do anything?
+    });
+  };
+
   this.deleteGallery = function(gallery) {
     galleryService.deleteGallery(gallery)
     .then( () => {

@@ -1,0 +1,38 @@
+<div class="gallery-item">
+  <button
+    ng-click="galleryItemCtrl.deleteGallery(gallery)"
+    ng-show="!galleryItemCtrl.editMode">
+    delete
+  </button>
+  <button
+    ng-click="galleryItemCtrl.editGallery()"
+    ng-show="!galleryItemCtrl.editMode">
+    edit
+  </button>
+  <button
+    ng-click="galleryItemCtrl.updateGallery()"
+    ng-show="galleryItemCtrl.editMode">
+    save
+  </button>
+  <button
+    ng-click="galleryItemCtrl.cancel()"
+    ng-show="galleryItemCtrl.editMode">
+    cancel
+  </button>
+  <div><span class="key">name:</span>
+    <span ng-show="!galleryItemCtrl.editMode">{{ galleryItemCtrl.gallery.name }}</span>
+    <input type="text"
+      ng-model="galleryItemCtrl.gallery.name"
+      ng-show="galleryItemCtrl.editMode">
+  </div>
+  <div><span class="key">description:</span>
+    <span ng-show="!galleryItemCtrl.editMode">{{ gallery.desc }}</span>
+    <input type="text"
+      ng-model="galleryItemCtrl.gallery.desc"
+      ng-show="galleryItemCtrl.editMode" >
+  </div>
+  <div><span class="key">id:</span>
+    {{ gallery._id }}
+  </div>
+
+</div>

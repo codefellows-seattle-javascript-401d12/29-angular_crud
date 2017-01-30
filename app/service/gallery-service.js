@@ -70,5 +70,19 @@ function galleryService($log, $q, $http, $rootScope, authService) {
     .catch(errors);
   };
 
+  service.updateGallery = function(gallery) {
+    $log.debug('galleryService.updateGallery()');
+
+    return authService.getToken()
+    .then( token => {
+      return $http.put(`${apiUrl}/${gallery._id}`, gallery, makeConfig(token));
+    })
+    .then( () => {
+      $log.log('gallery updated');
+      return $q.resolve();
+    })
+    .catch(errors);
+  };
+
   return service;
 }

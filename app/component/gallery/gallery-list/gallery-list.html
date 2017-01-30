@@ -1,42 +1,11 @@
 <section class="gallery-list">
   <h2>Galleries</h2>
-  <ul ng-repeat="gallery in galleryListCtrl.galleries">
-    <li>
-      <button
-        ng-click="galleryListCtrl.deleteGallery(gallery)"
-        ng-show="!galleryListCtrl.editMode">
-        delete
-      </button>
-      <button
-        ng-click="galleryListCtrl.editGallery()"
-        ng-show="!galleryListCtrl.editMode">
-        edit
-      </button>
-      <button
-        ng-click="galleryListCtrl.updateGallery()"
-        ng-show="galleryListCtrl.editMode">
-        save
-      </button>
-      <button
-        ng-click="galleryListCtrl.cancel()"
-        ng-show="galleryListCtrl.editMode">
-        cancel
-      </button>
-      <div><span class="key">name:</span>
-        <span ng-show="!galleryListCtrl.editMode">{{ gallery.name }}</span>
-        <input type="text"
-          ng-model="galleryListCtrl.gallery.name"
-          ng-show="galleryListCtrl.editMode">
-      </div>
-      <div><span class="key">description:</span>
-        <span ng-show="!galleryListCtrl.editMode">{{ gallery.desc }}</span>
-        <input type="text"
-          ng-model="galleryListCtrl.gallery.desc"
-          ng-show="galleryListCtrl.editMode" >
-      </div>
-      <div><span class="key">id:</span>
-        {{ gallery._id }}
-      </div>
-    </li>
-  </ul>
+
+  <gallery-item
+    ng-repeat="gallery in galleryListCtrl.galleries"
+    gallery="gallery"
+    on-delete="galleryListCtrl.deleteGallery(gallery)"
+    on-update="galleryListCtrl.updateGallery(gallery, prop, value)">
+  </gallery-item>
+
 </section>
