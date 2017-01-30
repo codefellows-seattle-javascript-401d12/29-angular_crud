@@ -28,7 +28,7 @@ function galleryService($log, $q, $http, $rootScope, authService) {
   service.createGallery = function(gallery) {
     $log.debug('galleryService.createGallery()', gallery);
 
-    authService.getToken()
+    return authService.getToken()
     .then( token => {
       return $http.post(apiUrl, gallery, makeConfig(token));
     })
@@ -44,7 +44,7 @@ function galleryService($log, $q, $http, $rootScope, authService) {
   service.fetchGalleries = function() {
     $log.debug('galleryService.fetchGalleries()');
 
-    authService.getToken()
+    return authService.getToken()
     .then( token => {
       return $http.get(apiUrl, makeConfig(token));
     })
@@ -59,7 +59,7 @@ function galleryService($log, $q, $http, $rootScope, authService) {
   service.deleteGallery = function(gallery) {
     $log.debug('galleryService.deleteGallery()', gallery);
 
-    authService.getToken()
+    return authService.getToken()
     .then( token => {
       return $http.delete(`${apiUrl}/${gallery._id}`, makeConfig(token));
     })
