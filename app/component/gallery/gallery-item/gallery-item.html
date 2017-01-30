@@ -1,5 +1,6 @@
 <div class="gallery-item">
-  <div>
+  <button class="btn-delete" ng-click="galleryItemCtrl.delete()">delete</button>
+  <div class="field">
     <span class="key">name:</span>
     <editable-field
       field-value="galleryItemCtrl.gallery.name"
@@ -7,15 +8,16 @@
       on-update="galleryItemCtrl.update('name', value)">
     </editable-field>
   </div>
-  <div><span class="key">description:</span>
+  <div class="field">
+    <span class="key">description:</span>
     <editable-field
       field-value="galleryItemCtrl.gallery.desc"
       field-type="text"
       on-update="galleryItemCtrl.update('desc', value)">
     </editable-field>
   </div>
-  <div><span class="key">id:</span>
+  <div class="field">
+    <span class="key">id:</span>
     {{ galleryItemCtrl.gallery._id }}
   </div>
-  <button ng-click="galleryItemCtrl.delete()">delete</button>
 </div>

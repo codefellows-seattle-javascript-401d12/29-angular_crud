@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_editable-field.scss');
+
 module.exports = {
   template: require('./editable-field.html'),
   controller: ['$log', EditableFieldController],

@@ -9,6 +9,12 @@
   padding-left: $gutter-sm;
   .key {
     font-weight: bold;
-    margin-right: $gutter-sm;
+  }
+  .field {
+    padding-bottom: $gutter-sm;
+  }
+  .btn-delete {
+    float: right;
+    margin-right: 1%;
   }
 }
