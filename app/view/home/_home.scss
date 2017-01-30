@@ -12,6 +12,11 @@
     padding-top: $gutter-sm;
     padding-left: $gutter-sm;
 
+    button {
+      margin-right: 2%;
+      float: right;
+    }
+
     div {
       padding-bottom: $gutter-sm;
     }
