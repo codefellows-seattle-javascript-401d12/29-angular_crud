@@ -3,36 +3,36 @@
   <ul ng-repeat="gallery in galleryListCtrl.galleries">
     <li>
       <button
-        ng-click="homeCtrl.deleteGallery(gallery)"
-        ng-show="!homeCtrl.editMode">
+        ng-click="galleryListCtrl.deleteGallery(gallery)"
+        ng-show="!galleryListCtrl.editMode">
         delete
       </button>
       <button
-        ng-click="homeCtrl.editGallery()"
-        ng-show="!homeCtrl.editMode">
+        ng-click="galleryListCtrl.editGallery()"
+        ng-show="!galleryListCtrl.editMode">
         edit
       </button>
       <button
-        ng-click="homeCtrl.updateGallery()"
-        ng-show="homeCtrl.editMode">
+        ng-click="galleryListCtrl.updateGallery()"
+        ng-show="galleryListCtrl.editMode">
         save
       </button>
       <button
-        ng-click="homeCtrl.cancel()"
-        ng-show="homeCtrl.editMode">
+        ng-click="galleryListCtrl.cancel()"
+        ng-show="galleryListCtrl.editMode">
         cancel
       </button>
       <div><span class="key">name:</span>
-        <span ng-show="!homeCtrl.editMode">{{ gallery.name }}</span>
+        <span ng-show="!galleryListCtrl.editMode">{{ gallery.name }}</span>
         <input type="text"
-          ng-model="homeCtrl.gallery.name"
-          ng-show="homeCtrl.editMode">
+          ng-model="galleryListCtrl.gallery.name"
+          ng-show="galleryListCtrl.editMode">
       </div>
       <div><span class="key">description:</span>
-        <span ng-show="!homeCtrl.editMode">{{ gallery.desc }}</span>
+        <span ng-show="!galleryListCtrl.editMode">{{ gallery.desc }}</span>
         <input type="text"
-          ng-model="homeCtrl.gallery.desc"
-          ng-show="homeCtrl.editMode" >
+          ng-model="galleryListCtrl.gallery.desc"
+          ng-show="galleryListCtrl.editMode" >
       </div>
       <div><span class="key">id:</span>
         {{ gallery._id }}
