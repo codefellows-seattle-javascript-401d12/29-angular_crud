@@ -18,6 +18,7 @@ function HomeController($log, $rootScope, galleryService) {
   };
 
   this.fetchGalleries();
+  this.gallery = {};
 
   $rootScope.$on('$locationChangeSuccess', () => {
     this.fetchGalleries();
@@ -29,4 +30,5 @@ function HomeController($log, $rootScope, galleryService) {
       this.fetchGalleries();
     });
   };
+
 }

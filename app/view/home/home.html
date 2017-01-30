@@ -4,10 +4,41 @@
   <h2>Galleries</h2>
   <ul ng-repeat="gallery in homeCtrl.galleries">
     <li>
-      <button ng-click="homeCtrl.deleteGallery(gallery)">delete</button>
-      <div><span class="key">name:</span>{{ gallery.name }}</div>
-      <div><span class="key">description:</span>{{ gallery.desc }}</div>
-      <div><span class="key">id:</span>{{ gallery._id }}</div>
+      <button
+        ng-click="homeCtrl.deleteGallery(gallery)"
+        ng-show="!homeCtrl.editMode">
+        delete
+      </button>
+      <button
+        ng-click="homeCtrl.editGallery()"
+        ng-show="!homeCtrl.editMode">
+        edit
+      </button>
+      <button
+        ng-click="homeCtrl.updateGallery()"
+        ng-show="homeCtrl.editMode">
+        save
+      </button>
+      <button
+        ng-click="homeCtrl.cancel()"
+        ng-show="homeCtrl.editMode">
+        cancel
+      </button>
+      <div><span class="key">name:</span>
+        <span ng-show="!homeCtrl.editMode">{{ gallery.name }}</span>
+        <input type="text"
+          ng-model="homeCtrl.gallery.name"
+          ng-show="homeCtrl.editMode">
+      </div>
+      <div><span class="key">description:</span>
+        <span ng-show="!homeCtrl.editMode">{{ gallery.desc }}</span>
+        <input type="text"
+          ng-model="homeCtrl.gallery.desc"
+          ng-show="homeCtrl.editMode" >
+      </div>
+      <div><span class="key">id:</span>
+        {{ gallery._id }}
+      </div>
     </li>
   </ul>
 </section>
