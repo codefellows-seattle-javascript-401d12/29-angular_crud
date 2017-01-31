@@ -32,7 +32,6 @@ button {
   padding: 1% 5%;
   background: $btn-primary;
   color: $white;
-  font-size: 100%;
   border: none;
   border-radius: $btn-radius;
   cursor: pointer;
@@ -48,6 +47,11 @@ button {
     color: $btn-primary;
     cursor: inherit;
   }
+}
+
+input {
+  border-radius: 3px;
+  border: none;
 }
 
 .clear-fix {
