@@ -65,6 +65,8 @@ function galleryService($log, $q, $http, $rootScope, authService) {
     })
     .then( () => {
       $log.log('gallery deleted');
+      let index = service.galleries.indexOf(gallery);
+      service.galleries.splice(index, 1);
       return $q.resolve();
     })
     .catch(errors);

@@ -5,12 +5,21 @@
   color: $brand-primary;
   margin-bottom: $gutter-sm;
   border-radius: 7px;
-  padding-top: $gutter-sm;
-  padding-left: $gutter-sm;
+  padding: $gutter-sm;
   .key {
     font-weight: bold;
+    text-align: right;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: inline-block;
   }
   .field {
     padding-bottom: $gutter-sm;
+  }
+  .buttons {
+    button {
+      float: right;
+      margin-left: 2%;
+    }
   }
 }

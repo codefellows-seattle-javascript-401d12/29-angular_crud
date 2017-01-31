@@ -1,23 +1,26 @@
 <div class="gallery-item">
-  <button class="btn-delete" ng-click="galleryItemCtrl.delete()">delete</button>
-  <div class="field">
-    <span class="key">name:</span>
-    <editable-field
-      field-value="galleryItemCtrl.gallery.name"
-      field-type="text"
-      on-update="galleryItemCtrl.update('name', value)">
-    </editable-field>
+
+  <div ng-if="!galleryItemCtrl.showEditor">
+    <div class="field">
+      <span class="key">name:</span>
+      <span>{{ galleryItemCtrl.gallery.name }}</span>
+    </div>
+
+    <div class="field">
+      <span class="key">description:</span>
+      <span>{{ galleryItemCtrl.gallery.desc }}</span>
+    </div>
   </div>
-  <div class="field">
-    <span class="key">description:</span>
-    <editable-field
-      field-value="galleryItemCtrl.gallery.desc"
-      field-type="text"
-      on-update="galleryItemCtrl.update('desc', value)">
-    </editable-field>
+
+  <edit-gallery
+    ng-if="galleryItemCtrl.showEditor"
+    gallery="galleryItemCtrl.gallery"
+    on-complete="galleryItemCtrl.showEditor = false">
+  </edit-gallery>
+
+  <div class="buttons" ng-if="!galleryItemCtrl.showEditor">
+    <button ng-click="galleryItemCtrl.delete()">delete</button>
+    <button ng-click="galleryItemCtrl.showEditor = true">edit</button>
   </div>
-  <div class="field">
-    <span class="key">id:</span>
-    {{ galleryItemCtrl.gallery._id }}
-  </div>
+  <div class="clear-fix"></div>
 </div>

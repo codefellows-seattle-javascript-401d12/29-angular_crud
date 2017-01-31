@@ -4,25 +4,20 @@ require('./_gallery-item.scss');
 
 module.exports = {
   template: require('./gallery-item.html'),
-  controller: ['$log', GalleryItemController],
+  controller: ['$log', 'galleryService', GalleryItemController],
   controllerAs: 'galleryItemCtrl',
   bindings: {
-    gallery: '<',
-    onDelete: '&',
-    onUpdate: '&'
+    gallery: '<'
   }
 };
 
-function GalleryItemController($log) {
+function GalleryItemController($log, galleryService) {
   $log.debug('GalleryItemController()');
 
-  $log.debug(this.gallery);
+  this.showEditor = false;
 
   this.delete = function() {
-    this.onDelete({ gallery: this.gallery });
-  };
-
-  this.update = function(prop, value) {
-    this.onUpdate({ gallery: this.gallery, prop, value });
+    $log.debug('galleryItemCtrl.delete()');
+    galleryService.deleteGallery(this.gallery);
   };
 }
