@@ -1,11 +1,13 @@
 @import "../../../scss/lib/theme/vars";
 
 .gallery-item {
-  background: $brand-secondary;
-  color: $brand-primary;
-  margin-bottom: $gutter-sm;
-  border-radius: 7px;
-  padding: $gutter-sm;
+  .gallery-box {
+    background: $brand-secondary;
+    color: $brand-primary;
+    margin-bottom: $gutter-sm;
+    border-radius: 7px;
+    padding: $gutter-sm;
+  }
   .key {
     font-weight: bold;
     text-align: right;
@@ -13,13 +15,11 @@
     margin-bottom: 1%;
     display: inline-block;
   }
-  .field {
-    padding-bottom: $gutter-sm;
-  }
   .buttons {
     button {
       float: right;
       margin-left: 2%;
+      margin-bottom: 2%;
     }
   }
 }
