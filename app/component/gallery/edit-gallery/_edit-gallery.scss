@@ -1,20 +1,8 @@
 @import "../../../scss/lib/theme/vars";
 
 .edit-gallery {
-  .info {
-    background: $brand-secondary;
-    color: $brand-primary;
-    margin-bottom: $gutter-sm;
-    border-radius: 7px;
-    padding: $gutter-sm;
-  }
-
-  button {
-    float: right;
-    margin-bottom: 2%;
-  }
   input {
-    width: 75%;
+    width: 72%;
     padding: 1%;
   }
 }

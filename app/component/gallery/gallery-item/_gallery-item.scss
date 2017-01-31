@@ -1,7 +1,7 @@
 @import "../../../scss/lib/theme/vars";
 
 .gallery-item {
-  .gallery-box {
+  .info {
     background: $brand-secondary;
     color: $brand-primary;
     margin-bottom: $gutter-sm;
@@ -15,11 +15,9 @@
     margin-bottom: 1%;
     display: inline-block;
   }
-  .buttons {
-    button {
-      float: right;
-      margin-left: 2%;
-      margin-bottom: 2%;
-    }
+  button {
+    float: right;
+    margin-left: 2%;
+    margin-bottom: 2%;
   }
 }

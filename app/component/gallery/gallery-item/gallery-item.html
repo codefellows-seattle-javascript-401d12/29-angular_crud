@@ -1,6 +1,6 @@
 <div class="gallery-item">
 
-  <div class="gallery-box"
+  <div class="info"
     ng-if="!galleryItemCtrl.showEditor">
     <div class="field">
       <span class="key">name:</span>
@@ -12,6 +12,10 @@
       <span>{{ galleryItemCtrl.gallery.desc }}</span>
     </div>
   </div>
+  <div class="buttons" ng-if="!galleryItemCtrl.showEditor">
+    <button ng-click="galleryItemCtrl.delete()">delete</button>
+    <button ng-click="galleryItemCtrl.showEditor = true">edit</button>
+  </div>
 
   <edit-gallery
     ng-if="galleryItemCtrl.showEditor"
@@ -19,9 +23,5 @@
     on-complete="galleryItemCtrl.showEditor = false">
   </edit-gallery>
 
-  <div class="buttons" ng-if="!galleryItemCtrl.showEditor">
-    <button ng-click="galleryItemCtrl.delete()">delete</button>
-    <button ng-click="galleryItemCtrl.showEditor = true">edit</button>
-  </div>
   <div class="clear-fix"></div>
 </div>
