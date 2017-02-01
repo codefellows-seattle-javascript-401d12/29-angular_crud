@@ -5,21 +5,26 @@ html, body {
   height: 100%;
   font-family: $font-std;
   color: $brand-secondary;
-  background: #DDD;
+  background: $brand-primary * 3;
 }
 
 h1 {
-  font-size: 200%;
+  font-size: 5vw;
   margin-bottom: $gutter-sm;
 }
 
 h2 {
-  font-size: 150%;
-  margin-bottom: $gutter-sm / 2 0;
+  font-size: 4vw;
+  margin: $gutter-sm / 2 0;
+}
+
+h3 {
+  font-size: 3vw;
+  margin-bottom: $gutter-sm;
 }
 
 a {
-  color: $brand-primary;
+  color: $black;
   text-decoration: none;
   font-weight: bold;
   transition: 350ms all;
@@ -35,9 +40,9 @@ button {
   color: $white;
   border: none;
   border-radius: $btn-radius;
+  font-size: 3vw;
   cursor: pointer;
   outline-style: none;
-  transition: 350ms all;
 
   &:hover {
     background: $brand-secondary;
@@ -51,9 +56,31 @@ button {
   }
 }
 
-input {
-  border-radius: 5px;
-  border: none;
+input[type="text"] {
+  width: 100%;
+  padding: 1.5vw 2vw;
+  font-size: 2vw;
+  border: solid 1px $brand-primary;
+  border-radius: $btn-radius;
+  box-sizing: border-box;
+
+  &:focus {
+    background: $brand-primary;
+    color: $white;
+  }
+}
+
+input[type="password"] {
+  @extend input[type="text"];
+}
+
+input[type="email"] {
+  @extend input[type="text"];
+}
+
+.input-std {
+  @extend input[type="text"];
+  display: inline-block;
 }
 
 .clear-fix {

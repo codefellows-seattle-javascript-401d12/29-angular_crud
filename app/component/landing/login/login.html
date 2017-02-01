@@ -17,16 +17,6 @@
         ng-model="loginCtrl.user.username"
         required>
     </div>
-    <div
-      ng-classs="{
-        'error': loginForm.email.$invalid,
-        'success': loginForm.email.$valid
-      }">
-      <input type="email"
-        name="email"
-        placeholder="email"
-        ng-model="loginForm.user.email">
-    </div>
 
     <div
       ng-class="{
