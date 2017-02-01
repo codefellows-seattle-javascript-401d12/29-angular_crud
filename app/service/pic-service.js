@@ -48,13 +48,15 @@ function picService($log, $q, $http, Upload, authService) {
         Accept: 'application/json'
       };
 
+      $log.debug('Uploading:', pic);
+
       return Upload.upload({
         url,
         headers,
         method: 'POST',
         data: {
-          name: pic.name,
-          desc: pic.desc,
+          name: pic.name || ' ',
+          desc: pic.desc || ' ',
           file: pic.file
         }
       });
