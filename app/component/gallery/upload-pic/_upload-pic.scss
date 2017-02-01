@@ -9,6 +9,16 @@
   }
   .grab-image {
     text-decoration: underline;
+    cursor: pointer;
     margin-right: $gutter-sm;
+
+    &:hover {
+      background: $brand-secondary;
+    }
+
+    &:active {
+      background: $brand-primary;
+      color: $white;
+    }
   }
 }
