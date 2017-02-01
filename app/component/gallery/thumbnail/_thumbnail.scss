@@ -1,6 +1,13 @@
+@import "../../../scss/lib/theme/vars";
+
 .thumbnail {
+  padding: $gutter-sm 0;
   width: 100%;
   img {
     width: 100%;
+    margin-bottom: $gutter-sm;
+  }
+  button {
+    float: right;
   }
 }
