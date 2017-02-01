@@ -1,0 +1,20 @@
+@import "../../../scss/lib/theme/vars";
+
+.create-gallery {
+
+  padding: $gutter-sm 0;
+
+  .title {
+    padding: 5% 0;
+  }
+
+  input {
+    width: 94%;
+    padding: 2vw;
+    margin-bottom: 4vw;
+    float: right;
+  }
+  button {
+    float: right;
+  }
+}
