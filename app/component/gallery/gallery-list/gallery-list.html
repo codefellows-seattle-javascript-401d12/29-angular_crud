@@ -3,7 +3,12 @@
 
   <gallery-item
     ng-repeat="gallery in galleryListCtrl.galleries"
-    gallery="gallery">
+    gallery="gallery"
+    ng-click="galleryListCtrl.currentGallery = gallery">
   </gallery-item>
+
+  <thumbnail-container ng-if="galleryListCtrl.currentGallery"
+    gallery="galleryListCtrl.currentGallery">
+  </thumbnail-container>
 
 </section>

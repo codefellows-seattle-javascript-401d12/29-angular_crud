@@ -14,6 +14,8 @@ module.exports = {
 function UploadPicController($log, picService) {
   $log.debug('UploadPicController()');
 
+  this.pic = {};
+
   this.uploadPic = function() {
     $log.debug('uploadPicCtrl.uploadPic()');
 
