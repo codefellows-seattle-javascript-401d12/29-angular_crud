@@ -1,7 +1,12 @@
 @import "../../../scss/lib/theme/vars";
+@import "../../../scss/lib/base/placeholder";
 
 .upload-pic {
+  [placeholder] {
+    @include placeholder(#c9c9c9);
+  }
   input {
+    background: #888;
     margin-bottom: $gutter-sm;
   }
   .upload-footer {
