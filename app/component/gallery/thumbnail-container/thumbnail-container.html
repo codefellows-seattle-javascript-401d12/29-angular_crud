@@ -5,6 +5,7 @@
   <div>
     <thumbnail
       ng-repeat="item in thumbnailContainerCtrl.gallery.pics"
+      on-delete="thumbnailContainerCtrl.deletePic(item)"
       pic="item">
     </thumbnail>
   <div>
