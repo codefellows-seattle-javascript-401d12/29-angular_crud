@@ -1,0 +1,11 @@
+@import "../../../scss/lib/theme/vars";
+
+.upload-pic {
+  input {
+    background: #AAA;
+    color: $black;
+    margin-bottom: $gutter-sm;
+  }
+  .upload-footer {
+  }
+}
