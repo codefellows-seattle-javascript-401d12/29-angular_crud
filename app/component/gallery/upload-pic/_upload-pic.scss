@@ -5,11 +5,14 @@
     margin-bottom: $gutter-sm;
   }
   .upload-footer {
-    padding: $gutter-sm;
+    .align-right {
+      float: right;
+    }
   }
   .grab-image {
     text-decoration: underline;
     cursor: pointer;
+    margin-top: 1%;
     margin-right: $gutter-sm;
 
     &:hover {
