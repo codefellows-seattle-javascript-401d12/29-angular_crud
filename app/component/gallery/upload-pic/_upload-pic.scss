@@ -2,11 +2,13 @@
 
 .upload-pic {
   input {
-    background: #AAA;
-    color: $black;
     margin-bottom: $gutter-sm;
   }
   .upload-footer {
     padding: $gutter-sm;
+  }
+  .grab-image {
+    text-decoration: underline;
+    margin-right: $gutter-sm;
   }
 }
