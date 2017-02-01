@@ -1,8 +1,15 @@
 @import "../../../scss/lib/theme/vars";
 
 .edit-gallery {
-  input {
-    width: 72%;
-    background: #AAA;
+  .field {
+    display: flex;
+    flex-direction: row;
+    input {
+      padding: 0 1.5vw;
+      background: #AAA;
+      flex: auto;
+      border: 1px solid $brand-primary;
+      color: $brand-primary;
+    }
   }
 }

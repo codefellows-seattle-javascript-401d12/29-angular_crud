@@ -2,6 +2,7 @@
 @import "../../../scss/lib/base/placeholder";
 
 .upload-pic {
+  margin-bottom: $gutter-sm;
   [placeholder] {
     @include placeholder(#c9c9c9);
   }
