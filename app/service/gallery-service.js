@@ -10,15 +10,7 @@ function galleryService($log, $q, $http, $rootScope, authService) {
   const service = {};
   service.galleries = [];
 
-  function makeConfig(token) {
-    return {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    };
-  }
+  const makeConfig = require('./lib/make-config.js');
 
   function errors(err) {
     $log.error(err.message);
