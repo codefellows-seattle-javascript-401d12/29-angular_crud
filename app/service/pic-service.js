@@ -16,6 +16,8 @@ function picService($log, $q, Upload, authService) {
     return $q.reject(err);
   }
 
+  //TODO: Add deleteGalleryPic(gallery, pic)
+
   service.uploadGalleryPic = function(gallery, pic) {
     $log.debug('picService.uploadGalleryPic()');
 
