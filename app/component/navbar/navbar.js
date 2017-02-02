@@ -24,7 +24,6 @@ function NavbarController($log, $location, $rootScope, authService) {
       .catch( () => {
         $log.debug('navbar found no token');
         $location.url('/landing');
-        // $location.url('/#/signin');
       });
     }
   };

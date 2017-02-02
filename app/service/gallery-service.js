@@ -67,6 +67,8 @@ function galleryService($log, $q, $http, $rootScope, authService) {
   service.updateGallery = function(gallery) {
     $log.debug('galleryService.updateGallery()');
 
+    console.log('sending update:', gallery);
+
     return authService.getToken()
     .then( token => {
       return $http.put(`${apiUrl}/${gallery._id}`, gallery, makeConfig(token));

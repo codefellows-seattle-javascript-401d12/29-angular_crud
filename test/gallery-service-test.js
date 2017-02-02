@@ -34,7 +34,38 @@ describe('Gallery Service', function() {
         pics: []
       });
 
-      this.galleryService.createGallery(galleryData);
+      this.galleryService.createGallery(galleryData)
+      .then( gallery => {
+        console.log('created:',gallery);
+        this.gallery = gallery;
+      });
+      this.$httpBackend.flush();
+      this.$rootScope.$apply();
+    });
+  });
+
+  describe('galleryService.updateGallery()', () => {
+    it('should update a gallery', () => {
+      console.log('using gallery:',this.gallery);
+      let headers = {
+        Authorization: 'Bearer test token',
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      };
+      let update = {
+        _id: this.gallery._id,
+        name: 'new name'
+      };
+
+      this.$httpBackend.expectPUT(`${__API_URL__}/api/gallery/${this.gallery._id}`, update, headers)
+      .respond(202, {
+        _id: this.gallery._id,
+        name: 'new name',
+        desc: this.gallery.desc,
+        pics: this.gallery.pics
+      });
+
+      this.galleryService.updateGallery(update);
       this.$httpBackend.flush();
       this.$rootScope.$apply();
     });
