@@ -19,7 +19,8 @@
   },
   "globals": {
     "__DEBUG__": false,
-    "__API_URL__": false
+    "__API_URL__": false,
+    "angular": true
   },
   "extends": "eslint:recommended"
 }
