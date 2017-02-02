@@ -36,7 +36,6 @@ describe('Gallery Service', function() {
 
       this.galleryService.createGallery(galleryData)
       .then( gallery => {
-        console.log('created:',gallery);
         this.gallery = gallery;
       });
       this.$httpBackend.flush();
@@ -46,7 +45,6 @@ describe('Gallery Service', function() {
 
   describe('galleryService.updateGallery()', () => {
     it('should update a gallery', () => {
-      console.log('using gallery:',this.gallery);
       let headers = {
         Authorization: 'Bearer test token',
         Accept: 'application/json',
