@@ -35,6 +35,7 @@ function NavbarController($log, $location, $rootScope, authService) {
     this.checkPath();
   });
 
+  //TODO: Perhaps move logout logic to the authService.
   this.logout = function() {
     $log.debug('navbarCtrl.logout()');
     this.hideButtons = true;
