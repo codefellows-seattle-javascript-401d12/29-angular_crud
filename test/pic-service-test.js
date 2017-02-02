@@ -19,11 +19,16 @@ describe('Pic Service', function() {
 
   describe('picService.uploadGalleryPic()', () => {
     it('should add a pic to a gallery', () => {
+      //TODO: pic should probably have a file field.
+      //  Right now, the test passes without it, so
+      //  there might need to be some kind of validation
+      //  before we hit the server.
       let pic = {
         name: 'example pic name',
         desc: 'example pic desc'
       };
 
+      //TODO: Our Content-Type should probably be form/multipart
       let headers = {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -39,7 +44,7 @@ describe('Pic Service', function() {
         objectKey: 'xyz'
       });
 
-      this.picService.uploadGalleryPic(this.gallery, pic); 
+      this.picService.uploadGalleryPic(this.gallery, pic);
     });
   }); //upload
 
