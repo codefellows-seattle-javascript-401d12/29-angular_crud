@@ -18,7 +18,7 @@ describe('Edit Gallery Component', function() {
           //We don't care about pics in this component.
         },
         onComplete: function() {
-          console.log('onComplete called');
+          console.log('onComplete called when spyOn().and.callThrough()');
         }
       };
       return bindings;
@@ -40,7 +40,7 @@ describe('Edit Gallery Component', function() {
   describe('editGalleryCtrl.updateGallery()', () => {
     it('should make a valid put request and call onComplete', () => {
       let bindings = this.$bindings();
-      spyOn(bindings, 'onComplete');
+      spyOn(bindings, 'onComplete'); //.and.callThrough();
 
       let url = `${__API_URL__}/api/gallery/${bindings.gallery._id}`;
 
