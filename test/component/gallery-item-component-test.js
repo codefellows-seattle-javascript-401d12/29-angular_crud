@@ -1,19 +1,9 @@
 'use strict';
 
-const mockBindings = {
-  gallery: {
-    _id: 1234,
-    name: 'gallery name',
-    desc: 'gallery desc',
-    pics: []
-  }
-};
-
 describe('Gallery Item Component', function() {
   beforeEach( () => {
-    //TODO: refactor to have a beforeEach general setup module.
     angular.mock.module('cfgram');
-    angular.mock.inject( ($rootScope, $componentController, $httpBackend) => {
+    angular.mock.inject(($rootScope, $componentController, $httpBackend) => {
       this.$rootScope = $rootScope;
       this.$componentController = $componentController;
       this.$httpBackend = $httpBackend;
@@ -22,7 +12,8 @@ describe('Gallery Item Component', function() {
 
   describe('galleryItemCtrl.delete()', () => {
     it('should make a valid delete request', () => {
-      let url = `${__API_URL__}/api/gallery/${mockBindings.gallery._id}`;
+      let bindings = { gallery: mockGallery() };
+      let url = `${__API_URL__}/api/gallery/${bindings.gallery._id}`;
       let headers = {
         Accept: 'application/json',
         Authorization: 'Bearer test token'
@@ -30,7 +21,7 @@ describe('Gallery Item Component', function() {
 
       this.$httpBackend.expectDELETE(url, headers).respond(204);
 
-      let galleryItemCtrl = this.$componentController('galleryItem', null, mockBindings);
+      let galleryItemCtrl = this.$componentController('galleryItem', null, bindings);
       galleryItemCtrl.delete();
 
       this.$httpBackend.flush();
@@ -38,3 +29,15 @@ describe('Gallery Item Component', function() {
     });
   }); //delete()
 });
+
+let num = 0;
+function mockGallery() {
+  let rand = Math.floor(Math.random()*10000);
+  num++;
+  return {
+    _id: `${rand}-${num}`,
+    name: `gallery ${rand}`,
+    desc: `description for ${rand}`,
+    pics: []
+  };
+}
